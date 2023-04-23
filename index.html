@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MADLAB PWA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="service" href="sw.js">
+
+</head>
+<script>
+  if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then((registration) => {
+      registration.addEventListener("updatefound", () => {
+        
+        const installingWorker = registration.installing;
+        console.log(
+          "A new service worker is being installed:",
+          installingWorker
+        );
+
+      });
+    })
+    .catch((error) => {
+      console.error(`Service worker registration failed: ${error}`);
+    });
+} else {
+  console.error("Service workers are not supported.");
+}
+</script>
+<body>
+
+  <p> <!-- It is a Paragraph tag for creating the paragraph -->  
+    <b> MUSIC </b>  </i>  is considered a language people around the world connect universally. We find music as the best friend in happiness and sorrow. Music makes us feel special and gives us enthusiasm. It also makes us relate to the situations of life. For all the music lovers out there, here is a list of fascinating facts about music that will spellbind you.
+    </p>  
+    We all sway to music that touches our hearts. Finding someone with the same taste is enthralling. Discussing topics related to music for hours is something we cherish. It has the potential to reunite the world and forget all boundaries. These facts will prove that music has the power of healing and drawing people closer.It is an art of sound compiled and expressed following particular emotions and ideas in a significant form. It has melody, harmony, rhythm and tones that make us feel the song or instrumental played live or using a device</i>
+    </p>  
+
+</body>
+</html>
