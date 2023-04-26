@@ -1,0 +1,297 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.cyan),
+      debugShowCheckedModeBanner: false,
+      home: MyStatefulWidget(),
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({super.key});
+
+  @override
+  State<MyStatefulWidget> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyStatefulWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: new Text('Navigation Drawer'),
+        backgroundColor: Colors.cyan,
+        leading: new Icon(Icons.menu),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.arrow_forward),
+            onPressed: () {
+              print('you pressed Arrow Button');
+            },
+          ),
+          new IconButton(
+              icon: new Icon(Icons.add),
+              onPressed: () {
+                print('you pressed Addition Button');
+              }),
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () {
+                print('you pressed Close Button');
+              }),
+        ],
+      ),
+      drawer: Drawer(
+        elevation: 20.0,
+        child: Column(
+          children: <Widget>[
+            const UserAccountsDrawerHeader(
+              accountName: Text('Sneha Baital'),
+              accountEmail: Text('snehabit120@gst.sies.edu.in'),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Color.fromARGB(255, 255, 0, 102),
+                child: Text('SB'),
+              ),
+            ),
+            ListTile(
+              title: const Text("Inbox"),
+              leading: const Icon(Icons.mail_outline_sharp),
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MailPage()),
+                );
+              },
+            ),
+            const Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: const Text('Primary'),
+              leading: const Icon(Icons.stay_primary_portrait_sharp),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Primary()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Social'),
+              leading: const Icon(Icons.people_alt_sharp),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Social()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Promotions'),
+              leading: const Icon(Icons.discount_sharp),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Promotion()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MailPage extends StatelessWidget {
+  const MailPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Mail Screen"),
+      ),
+      body: Center(
+        child: Text('WELCOME TO MAIL PAGE'),
+      ),
+    );
+  }
+}
+
+class Primary extends StatelessWidget {
+  const Primary({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Primary Page"),
+      ),
+      body: Center(child: Text('YOU ARE INTO PRIMARY PAGE')),
+    );
+  }
+}
+
+class Social extends StatelessWidget {
+  const Social({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Social Page"),
+      ),
+      body: Center(child: Text('YOU ARE INTO SOCIAL PAGE')),
+    );
+  }
+}
+
+class Promotion extends StatelessWidget {
+  const Promotion({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Promotion Page"),
+      ),
+      body: Center(child: Text('YOU ARE INTO PROMOTION PAGE')),
+    );
+  }
+}
+
+
+
+
+
+
+//Bottom Navigation Bar
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.amber),
+      debugShowCheckedModeBanner: false,
+      home: MyStatefulWidget(),
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({super.key});
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  int _count = 0;
+  int _selectedIndex = 0;
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text('Home Page',
+        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    Text('Search Page',
+        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    Text('Profile Page',
+        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold))
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: new Text('Bottom Navigation'),
+        backgroundColor: Colors.amber,
+        leading: new Icon(Icons.menu),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.arrow_forward),
+            onPressed: () {
+              print('you pressed Arrow Button');
+            },
+          ),
+          new IconButton(
+              icon: new Icon(Icons.add),
+              onPressed: () {
+                print('you pressed Addition Button');
+              }),
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () {
+                print('you pressed Close Button');
+              }),
+        ],
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_filled),
+              label: 'Home ',
+              backgroundColor: Colors.amber),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Search ',
+              backgroundColor: Colors.amber),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+              backgroundColor: Colors.amber),
+        ],
+        type: BottomNavigationBarType.shifting,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black,
+        iconSize: 35,
+        onTap: _onItemTapped,
+        elevation: 5,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => setState(() {
+          _count++;
+        }),
+        tooltip: 'Increment Counter',
+        child: const Icon(Icons.add_a_photo),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+    );
+  }
+}
+
+
+
+
+
