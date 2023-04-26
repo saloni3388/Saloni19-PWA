@@ -1,0 +1,316 @@
+AIM : To design Flutter UI by including common widgets. (AppBar, Column, Row, Container, Buttons, Text ,)
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+// class MyApp extends StatefulWidget {
+//   const MyApp({Key? key}) : super(key: key);
+
+
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   String ttext = '';
+
+//    @override
+//   void initState() {
+//     // TODO: implement initState
+//     ttext = 'Click on this button';
+//     super.initState();
+//   }
+
+
+//    @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         title: "My First App",
+//         theme: ThemeData(primarySwatch: Colors.blueGrey),
+//         home: Scaffold(
+//           appBar: AppBar(
+//             backgroundColor: Colors.blueGrey,
+//             title: const Text("My AppBar"),
+//             // elevation: 30.0,
+//             // centerTitle: true,
+//             // titleSpacing: 70.0,
+//             // toolbarOpacity: 0.5,
+//             leading: const Icon(Icons.menu),
+//             actions: <Widget>[
+//               IconButton(
+//                 icon: const Icon(Icons.arrow_forward),
+//                 onPressed: () {
+//                   //print('you pressed Arrow Button');
+//                   setState(() {
+//                     ttext = 'arrow';
+//                   });
+//                  // onarrow();
+//                 },
+//               ),
+//               // ignore: unnecessary_new
+//               new IconButton(
+//                   icon: const Icon(Icons.add),
+//                   onPressed: () {
+//                     // print('you pressed Addition Button');
+//                     //new Text("you pressed Addition Button");
+//                     setState(() {
+//                       ttext = 'add';
+//                     });
+//                   }),
+//               // ignore: unnecessary_new
+//               new IconButton(
+//                   icon: const Icon(Icons.close),
+//                   onPressed: () {
+//                     //print('you pressed Close Button');
+//                     setState(() {
+//                       ttext = 'close';
+//                     });
+//                   }),
+//             ],
+//           ),
+//           body: Text(ttext),
+//         ));
+//   }
+// }
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+      title: "My App" ,
+     
+      theme: ThemeData(primarySwatch: Colors.grey),
+      home: Scaffold(appBar: AppBar(title: new Text("My first app"),
+      leading: new Icon(Icons.menu),
+
+                actions: <Widget>[
+              new IconButton(
+                icon: new Icon(Icons.arrow_forward),
+                onPressed: () {
+                  print('you pressed Arrow Button');
+                },
+              ),
+              new IconButton(
+                  icon: new Icon(Icons.add),
+                  onPressed: () {
+                    print('you pressed Addition Button');
+                  }),
+              new IconButton(
+                  icon: new Icon(Icons.close),
+                  onPressed: () {
+                    print('you pressed Close Button');
+                  }),
+            ],
+
+
+
+
+
+
+      backgroundColor: Colors.blue),
+          body: Container(
+          color: Color.fromARGB(255, 247, 196, 102),
+          child: Container(
+            //color: Colors.yellow,
+            //3rd
+            width: double.infinity,  
+            height: 150.0,
+            //1st 2nd
+            padding: EdgeInsets.all(35),
+            margin: EdgeInsets.all(20),
+            //4rth
+            alignment: Alignment.bottomLeft,  
+            transform: Matrix4.rotationZ(0.0),  
+            //1st
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 4),
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [ // 2nd
+                new BoxShadow(
+                  color: Color.fromARGB(255, 184, 219, 248),
+                  offset: new Offset(6.0, 6.0),
+                ),
+              ],
+            ),
+            child: Text(
+              "Saloni Kharat",
+              style: TextStyle(color: Colors.black, fontSize: 40),
+            ),
+          ),
+        ),
+
+      ),
+     
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String ttext = '';
+
+   @override
+  void initState() {
+    // TODO: implement initState
+    ttext = 'Click on this button';
+    super.initState();
+  }
+
+
+   @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "My First App",
+        theme: ThemeData(primarySwatch: Colors.blueGrey),
+        home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.blueGrey,
+            title: const Text("My AppBar"),
+            // elevation: 30.0,
+            // centerTitle: true,
+            // titleSpacing: 70.0,
+            // toolbarOpacity: 0.5,
+            leading: const Icon(Icons.menu),
+            actions: <Widget>[
+              IconButton(
+                icon: const Icon(Icons.arrow_forward),
+                onPressed: () {
+                  //print('you pressed Arrow Button');
+                  setState(() {
+                    ttext = 'arrow';
+                  });
+                 // onarrow();
+                },
+              ),
+              // ignore: unnecessary_new
+              new IconButton(
+                  icon: const Icon(Icons.add),
+                  onPressed: () {
+                    // print('you pressed Addition Button');
+                    //new Text("you pressed Addition Button");
+                    setState(() {
+                      ttext = 'add';
+                    });
+                  }),
+              // ignore: unnecessary_new
+              new IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () {
+                    //print('you pressed Close Button');
+                    setState(() {
+                      ttext = 'close';
+                    });
+                  }),
+            ],
+          ),
+          body: Text(ttext),
+        ));
+  }
+}
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//       title: "My App" ,
+     
+//       theme: ThemeData(primarySwatch: Colors.grey),
+//       home: Scaffold(appBar: AppBar(title: new Text("My first app"),
+//       leading: new Icon(Icons.menu),
+
+//                 actions: <Widget>[
+//               new IconButton(
+//                 icon: new Icon(Icons.arrow_forward),
+//                 onPressed: () {
+//                   print('you pressed Arrow Button');
+//                 },
+//               ),
+//               new IconButton(
+//                   icon: new Icon(Icons.add),
+//                   onPressed: () {
+//                     print('you pressed Addition Button');
+//                   }),
+//               new IconButton(
+//                   icon: new Icon(Icons.close),
+//                   onPressed: () {
+//                     print('you pressed Close Button');
+//                   }),
+//             ],
+
+
+
+
+
+
+//       backgroundColor: Colors.blue),
+//           body: Container(
+//           color: Color.fromARGB(255, 247, 196, 102),
+//           child: Container(
+//             //color: Colors.yellow,
+//             //3rd
+//             width: double.infinity,  
+//             height: 150.0,
+//             //1st 2nd
+//             padding: EdgeInsets.all(35),
+//             margin: EdgeInsets.all(20),
+//             //4rth
+//             alignment: Alignment.bottomLeft,  
+//             transform: Matrix4.rotationZ(0.0),  
+//             //1st
+//             decoration: BoxDecoration(
+//               border: Border.all(color: Colors.black, width: 4),
+//               borderRadius: BorderRadius.circular(8),
+//               boxShadow: [ // 2nd
+//                 new BoxShadow(
+//                   color: Color.fromARGB(255, 184, 219, 248),
+//                   offset: new Offset(6.0, 6.0),
+//                 ),
+//               ],
+//             ),
+//             child: Text(
+//               "Saloni Kharat",
+//               style: TextStyle(color: Colors.black, fontSize: 40),
+//             ),
+//           ),
+//         ),
+
+//       ),
+     
+//     );
+//   }
+// }
