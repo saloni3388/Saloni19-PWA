@@ -1,0 +1,321 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.amber),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: new Text('Saloni: My First App'),
+          backgroundColor: Color.fromARGB(255, 28, 138, 234),
+          leading: new Icon(Icons.menu),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.arrow_forward),
+              onPressed: () {
+                print('you pressed Arrow Button');
+              },
+            ),
+            new IconButton(
+                icon: new Icon(Icons.add),
+                onPressed: () {
+                  print('you pressed Addition Button');
+                }),
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () {
+                  print('you pressed Close Button');
+                }),
+          ],
+        ),
+       
+        body:GridView.count(
+              crossAxisCount: 3,
+              children: List.generate(28, (index) {
+                return Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Image.asset('images/flower.jpg'),
+                  // child: Icon(Icons.holiday_village,
+                  //     size: 50, color: Color.fromARGB(255, 26, 135, 230)),
+                );
+              }
+              )
+              )
+
+
+
+
+        // body: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children:[
+        //     Container(
+        //       child:const Text("Saloni"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 238, 219, 78),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+             
+             
+        //     ),
+        //      Container(
+        //       child:const Text("120A3019"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 78, 216, 184),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //      Container(
+        //       child:const Text("IT"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 169, 135, 242),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //     Expanded(
+        //       child:Container(
+        //       child:const Text("IT"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 169, 135, 242),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //     )
+
+        //   ]
+        // )
+      ),
+    );
+  }
+}
+
+
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.amber),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: new Text('Saloni: My First App'),
+          backgroundColor: Color.fromARGB(255, 28, 138, 234),
+          leading: new Icon(Icons.menu),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.arrow_forward),
+              onPressed: () {
+                print('you pressed Arrow Button');
+              },
+            ),
+            new IconButton(
+                icon: new Icon(Icons.add),
+                onPressed: () {
+                  print('you pressed Addition Button');
+                }),
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () {
+                  print('you pressed Close Button');
+                }),
+          ],
+        ),
+       
+        body:GridView.count(
+              crossAxisCount: 1,
+              scrollDirection: Axis.horizontal,
+              children: List.generate(28, (index) {
+                return Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Image.asset('images/flower.jpg'),
+               
+                );
+              }
+              )
+              )
+
+
+
+
+        // body: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children:[
+        //     Container(
+        //       child:const Text("Saloni"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 238, 219, 78),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+             
+             
+        //     ),
+        //      Container(
+        //       child:const Text("120A3019"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 78, 216, 184),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //      Container(
+        //       child:const Text("IT"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 169, 135, 242),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //     Expanded(
+        //       child:Container(
+        //       child:const Text("IT"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 169, 135, 242),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //     )
+
+        //   ]
+        // )
+      ),
+    );
+  }
+}
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "MyApp",
+      theme: ThemeData(primarySwatch: Colors.amber),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: new Text('Saloni: My First App'),
+          backgroundColor: Color.fromARGB(255, 28, 138, 234),
+          leading: new Icon(Icons.menu),
+          actions: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.arrow_forward),
+              onPressed: () {
+                print('you pressed Arrow Button');
+              },
+            ),
+            new IconButton(
+                icon: new Icon(Icons.add),
+                onPressed: () {
+                  print('you pressed Addition Button');
+                }),
+            new IconButton(
+                icon: new Icon(Icons.close),
+                onPressed: () {
+                  print('you pressed Close Button');
+                }),
+          ],
+        ),
+       
+       
+          body: ListView(
+            padding: const EdgeInsets.all(10),
+            children: const [
+              Card(
+                child: ListTile(
+                    title: Text('Title1'),
+                    trailing: Icon(Icons.home_filled),
+                    subtitle: Text('My text 2'),
+                    tileColor: Color.fromARGB(255, 247, 196, 94)),
+              ),
+              Card(
+                child: ListTile(
+                  title: Text('Title 2'),
+                  trailing: Icon(Icons.home_filled),
+                  subtitle: Text('My text 2'),
+                  tileColor: Color.fromARGB(255, 132, 235, 249),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                    title: Text('Title 3'),
+                    trailing: Icon(Icons.home_filled),
+                    subtitle: Text('My text 3'),
+                    tileColor: Color.fromARGB(255, 112, 143, 245)),
+              )
+            ],
+          )
+
+
+
+        // body: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children:[
+        //     Container(
+        //       child:const Text("Saloni"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 238, 219, 78),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+             
+             
+        //     ),
+        //      Container(
+        //       child:const Text("120A3019"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 78, 216, 184),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //      Container(
+        //       child:const Text("IT"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 169, 135, 242),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //     Expanded(
+        //       child:Container(
+        //       child:const Text("IT"),
+        //       height: 100,
+        //       color: Color.fromARGB(255, 169, 135, 242),
+        //       padding: EdgeInsets.all(35),
+        //       margin: EdgeInsets.all(10),
+        //     ),
+        //     )
+
+        //   ]
+        // )
+
+ 
+      ),
+    );
+  }
+}
